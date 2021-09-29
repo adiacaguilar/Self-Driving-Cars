@@ -61,7 +61,7 @@ Let's start with full human perception, planning and control and call this level
 
 If an autonomous system assist the driver by performing either lateral or longitudinal control tasks, we are in level one autonomy.
 
-![1554117082011](module 1/1554117082011.png)
+![1554117082011](assets/1554117082011.png)
 
 Adaptive cruise control is a good example of level one. In adaptive cruise control or ACC, the system can control the speed of the car. But it needs the driver to perform steering. So it can perform longitudinal control but needs the human to perform lateral control. Similarly, lane keeping assist systems are also Level one. In lane keeping assistance, the system can help you stay within your lane and warn you when you are drifting towards the boundaries. Today's systems rely on visual detection of lane boundaries coupled with lane centering lateral control. Let's move on to the next level, the level of partial automation.
 
@@ -73,7 +73,7 @@ In level two the system performs both the control tasks, lateral and longitudina
 
 In level three or the level of conditional automation, the system can perform Object and Event Detection in Response to a certain degree in addition to the control tasks. However, in the case of failure the control must be taken up by the driver.
 
-![1554117487130](module 1/1554117487130.png)
+![1554117487130](assets/1554117487130.png)
 
 **The key difference between level two and three, is that the driver does not need to pay attention in certain specific situations, as the vehicle can alert the driver in time to intervene.** This is a controversial level of automation as it is not always possible for an autonomy system to know when it is experiencing a failure. An example of level three systems, would be the Audi A Luxury Sedan, which was an automated driving system that can navigate unmonitored in slow traffic.
 
@@ -85,7 +85,7 @@ In the next level, we arrive at highly automated vehicles, where the system is c
 
 Finally, in level five the system is fully autonomous and its ODD is unlimited. Meaning that it can operate under any condition necessary.
 
-![1554117607975](module 1/1554117607975.png)
+![1554117607975](assets/1554117607975.png)
 
 Level five is the point where our society undergoes transformational change. With driverless taxis shuttling people in packages wherever we need them. We don't have any examples for level five yet, but maybe you'll be the one to bring these to reality someday soon. I think to note the levels of autonomy or actually a coarse measure of automation. In fact, it is possible for two car models to claim level four autonomy but have very different capabilities in ODDs. So, let's summarize. In this video we covered various concepts relating to automation. We covered some basic definitions including the Operational Design Domain and the concept of the driving task. And we explored the five levels of driving automation. You can now assess the level of automation in a self-driving system. In the next lesson we will explore the requirements for perception,a crucial aspect for Autonomous System Design.
 
@@ -97,7 +97,7 @@ Welcome to the second lesson in this module. In the previous lesson, we learned 
 
 Very roughly speaking, any driving tasks can be broken down into two components.
 
-![1554533856057](module 1/1554533856057.png)
+![1554533856057](assets/1554533856057.png)
 
 First, we need to understand what's happening around us and where we are. So, we need to perceive our surroundings. Secondly, we need to make a driving decision. For example, should we accelerate or stop before a pedestrian about to enter the roadway? Recall from the previous lesson the concept of OEDR or object and event detection and response. Any driving task requires some kind of OEDR, that is, we need some way of identifying objects around us, recognizing events happening near us, and then responding to it.
 
@@ -122,15 +122,15 @@ If we can do this prediction correctly, we can make informed decisions. For exam
 
 Let's discuss the various elements we need to be able to identify for the perception task. First, we need to identify static elements.
 
-![1554534392567](module 1/1554534392567.png)
+![1554534392567](assets/1554534392567.png)
 
 These are elements like roads and lane markings, things that segregate regions on the roads like zebra crossings, and important messages such as school up ahead. These are all on the road area. Then there are off-road elements like curbs that define the boundaries within which we can drive. There are the on-road traffic signals that periodically change and signal whether you are allowed to move forward, or left, or right, or just stay stopped. Then there are all kinds of road signs like those telling you the speed limit, indicating direction, whether there is a hospital coming up, or a school coming up, and so on.
 
-![1554550938866](module 1/1554550938866.png)
+![1554550938866](assets/1554550938866.png)
 
 Again, these are off-road elements. Finally, there are road obstructions. So, the orange cones that tell you construction is happening or that there is roadblock edge and so on. Also, these are on road elements.
 
-![1554550998629](module 1/1554550998629.png)
+![1554550998629](assets/1554550998629.png)
 
 #### 3.2 Dynamic objects（on-road）
 
@@ -144,7 +144,7 @@ We need to be able to estimate where we are and how we are moving at any point i
 
 Now that we've discussed the main goals for perception, let's conclude this discussion by going over why perception is also a difficult problem.
 
-![1554551364604](module 1/1554551364604.png)
+![1554551364604](assets/1554551364604.png)
 
 First, performing robust perception is a huge challenge. Detection and segmentation can be approached with modern machine learning methods, but there is much ongoing research to improve the reliability and performance to achieve human level capability. Access to large datasets is critical to this effort. With more training data, our segmentation and detection models perform better and more robustly, but collecting and labeling data for all possible vehicle types, weather conditions, and road surfaces is a very expensive and time-consuming process.
 
@@ -172,7 +172,7 @@ First, let's assume that the intersection is controlled. That is, it has traffic
 
 These decisions on lane changes and stopping locations are all short-term planning decisions. But wait! You also need to think and respond to situations that arise along the way. We still need object and event detection and response. What if a vehicle pulls into the turn lane in front of you? You would want to stop earlier to make room for the other vehicle. What if the stop lines weren't marked? You would have to approximately judge where the implied stop line is and stop before the pedestrian crossing. What if there were other vehicles behind you or even stalled in the intersection? How does the decision to execute a left turn change based on the many possible scenarios that can rapidly arise in normal driving?
 
-![1554789910669](module 1/1554789910669.png)
+![1554789910669](assets/1554789910669.png)
 
 All of these decisions fall into the immediate decision category and requires safe reactions from the planning system. The end result is an exploding list of possible decisions to evaluate on different timescales, even for a simple left turn scenario.
 
